@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <title>Band search result</title>
+</head>
+<body>
+<ul>
+    {% for band in bands %}
+        <li>
+            <h2><a href="{{ band.get_absolute_url }}">{{ band.name }}</a></h2>
+            {% if band.can_rock %}<p>This band can rock!</p>{% endif %}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

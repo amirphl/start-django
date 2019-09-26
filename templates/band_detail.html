@@ -1,0 +1,13 @@
+<html lang="en">
+<head>
+    <title>Band Detail</title>
+</head>
+<body>
+<ul>
+    <li>
+        <h2><a href="{{ band.get_absolute_url }}">{{ band.name }}</a></h2>
+        {% if band.can_rock %}<p>This band can rock!</p>{% endif %}
+    </li>
+</ul>
+</body>
+</html>
