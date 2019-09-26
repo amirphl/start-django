@@ -1,7 +1,7 @@
 {% load i18n %}
 <html>
 <head>
-    <title>{% trans 'Homepage - Hall of Fame' %}</title>
+    <title>{% trans 'Homepage' %}</title>
 </head>
 <body>
 {# Translated in the view: #}
@@ -18,6 +18,15 @@
         <li>
             <h2><a href="{{ band.get_absolute_url }}">{{ band.name }}</a></h2>
             {% if band.can_rock %}<p>{% trans 'This band can rock!' %}</p>{% endif %}
+        </li>
+    {% endfor %}
+
+    <h1>Users</h1>
+
+    {% for member in members %}
+        <li>
+            <h2><a href="{{ member.get_absolute_url }}">{{ member.name }} -- {{ member.instrument }}
+                -- {{ member.band.name }}</a></h2>
         </li>
     {% endfor %}
 </ul>
